@@ -1,0 +1,57 @@
+#### training dataset
+datasets_root = datasets
+training_data_folder = lm_13_train
+training_data_folder_2 = lm_imgn_13_train_1k_per_obj
+val_folder = lm_13_test
+test_folder = lm_13_test
+second_dataset_ratio = 0.5
+num_workers = 8
+train_obj_visible_theshold = 0.2
+num_bg_imgs = 10000
+change_bg_prob = 0.5
+
+#### network settings
+init_network_type = GNN
+init_network_backbone_name = resnet34
+init_pretrained_root=experiments/checkpoints/init_gnn2_resnet34_npt512_lm/
+init_network_num_graph_module = 2
+init_network_graph_k = 20
+init_network_graph_leaky_slope = 0.2
+network_type = vanilla_GNNskip
+network_res_log2 = 6
+network_query_type = mlp
+network_local_k = 2
+network_leaky_slope = 0.01
+network_num_graph_module = 3
+network_graph_k = 20
+network_graph_leaky_slope = 0.2
+BoundingBox_CropSize_image = 256
+
+#### check points
+load_checkpoint=False
+check_point_path=experiments/checkpoints/
+tensorboard_path=experiments/tensorboard_logs/runs/
+
+#### optimizer
+optimizer_type = Adam
+total_iteration = 120000
+stage_start_steps_str = 0_0_0
+batch_size = 32
+learning_rate = 0.0001
+learning_rate2 = 0.00005
+learning_rate2_start = 100000
+RoiBit_Loss_Type = BCE
+ProjBit_Loss_Type = BCE
+seg_visib_loss_weight = 1.0
+seg_full_loss_weight = 1.0
+
+#### augmentations
+Detection_reaults = detection_results/lm/bbox_faster_all.json
+padding_ratio = 1.5
+resize_method = crop_square_resize
+use_peper_salt= True
+use_motion_blur= True
+
+#### 3D keypoints
+num_p3d_log2 = 9
+fps_version = fps_202212

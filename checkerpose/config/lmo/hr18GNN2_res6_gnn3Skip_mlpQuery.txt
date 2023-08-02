@@ -1,0 +1,55 @@
+#### training dataset
+bop_challange = False
+bop_path = datasets/BOP_DATASETS/
+dataset_name = lmo
+training_data_folder = train_real
+training_data_folder_2 = train_pbr
+val_folder = test
+test_folder = test
+second_dataset_ratio = 0.75
+num_workers = 8
+train_obj_visible_theshold = 0.2
+
+#### network settings
+init_network_type = GNN
+init_network_backbone_name = hrnet_w18
+init_pretrained_root=experiments/checkpoints/init_gnn2_hrnetw18_npt512/
+init_network_num_graph_module = 2
+init_network_graph_k = 20
+init_network_graph_leaky_slope = 0.2
+network_type = vanilla_GNNskip
+network_res_log2 = 6
+network_query_type = mlp
+network_local_k = 2
+network_leaky_slope = 0.01
+network_num_graph_module = 3
+network_graph_k = 20
+network_graph_leaky_slope = 0.2
+BoundingBox_CropSize_image = 256
+
+#### check points
+load_checkpoint=False
+check_point_path=experiments/checkpoints/
+tensorboard_path=experiments/tensorboard_logs/runs/
+
+#### optimizer
+optimizer_type = Adam
+total_iteration = 380000
+stage_start_steps_str = 0_0_0
+batch_size = 32
+learning_rate = 0.0001
+RoiBit_Loss_Type = BCE
+ProjBit_Loss_Type = BCE
+seg_visib_loss_weight = 1.0
+seg_full_loss_weight = 1.0
+
+#### augmentations
+Detection_reaults = detection_results/lmo/fcos_V57eSE_MSx1333_ColorAugAAEWeaker_8e_lmo_pbr.json
+padding_ratio = 1.5
+resize_method = crop_square_resize
+use_peper_salt= True
+use_motion_blur= True
+
+#### 3D keypoints
+num_p3d_log2 = 9
+fps_version = fps_202212
