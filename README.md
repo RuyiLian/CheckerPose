@@ -71,6 +71,9 @@ And then run `pretrain.py` similar to LMO.
 `python pretrain_lm.py --cfg config/lm/init_gnn2_hrnetw18_npt512_lm.txt`
 
 ## Training
+
+(update 2023/09/04) we upload the trained models in [Google Drive](https://drive.google.com/drive/folders/1b5NQie-WNe_4LhYxqvbE35FaCTXzF9tB?usp=sharing). 
+
 1. For LMO dataset, adjust the paths in the config files, and train the network with `train.py`, e.g.
 
 `python train.py --cfg config/lmo/hr18GNN2_res6_gnn3Skip_mlpQuery.txt --obj_name ape`
@@ -88,6 +91,9 @@ And then run `train.py` similar to LMO.
 `python train_lm.py --cfg config/lm/hr18GNN2_res6_gnn3Skip_mlpQuery_lm.txt`
 
 ## Test with trained model
+
+(update 2023/09/04) we upload the trained models in [Google Drive](https://drive.google.com/drive/folders/1b5NQie-WNe_4LhYxqvbE35FaCTXzF9tB?usp=sharing).
+
 For LMO/YCBV, run 
 
 `python test.py --cfg config/lmo/hr18GNN2_res6_gnn3Skip_mlpQuery.txt --obj_name ape --ckpt_file path/to/the/best/checkpoint --eval_output_path path/to/save/the/evaluation/report --use_progressivex`
